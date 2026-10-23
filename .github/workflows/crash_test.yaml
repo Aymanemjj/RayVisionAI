@@ -1,0 +1,6 @@
+name: Models Crash test
+on: [push]
+jobs:
+  CrashTest:
+    runs-on:
+      
