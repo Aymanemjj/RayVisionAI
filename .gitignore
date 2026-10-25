@@ -1,3 +1,4 @@
 .venv
-data/*
-artifacts/*
+artifacts/cnn_model.joblib
+artifacts/fe_model.joblib
+artifacts/ft_model.joblib
