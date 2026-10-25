@@ -1,6 +1,24 @@
-name: Models Crash test
-on: [push]
+name: Model test
+
+on:
+  push:
+    branches: [main]
+
 jobs:
-  CrashTest:
-    runs-on:
-      
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run tests
+        working-directory: unittests
+        run: python -m unittest -v
